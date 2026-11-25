@@ -1,0 +1,12 @@
+name: astrbot_plugin_infocard
+display_name: 信息卡片
+desc: QQ 用户资料卡片展示插件，发送 /开盒 @群友 或 /开盒 QQ号 即可查看资料卡片，支持自动开盒新群友与退群成员，卡片含撤回倒计时保护。
+help: |
+  指令：/开盒 @群友 或 /开盒 QQ号，查询并展示 QQ 用户资料卡片。
+  在插件配置中可开启自动开盒新群友/主动退群成员，并可设置卡片撤回时间与信息保护名单。
+version: v1.0.0
+author: 摆烂的四不相
+repo: https://github.com/QWQ123t/astrbot_plugin_infocard
+support_platforms:
+  - aiocqhttp
+astrbot_version: ">=4.0.0"

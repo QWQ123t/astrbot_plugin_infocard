@@ -1,0 +1,43 @@
+{
+    "protect_ids": {
+        "description": "信息保护用户",
+        "type": "list",
+        "hint": "开盒时，会忽略名单中的用户，注意：Bot和Bot管理员已默认被保护，除非Bot管理员亲自使用命令开盒自己，否则无法被开盒",
+        "default": []
+    },
+    "autobox": {
+        "description": "自动开盒配置",
+        "type": "object",
+        "hint": "",
+        "items": {
+            "enter": {
+                "description": "自动开盒新进群的人",
+                "type": "bool",
+                "default": false
+            },
+            "exit": {
+                "description": "自动开盒主动退群的人",
+                "type": "bool",
+                "default": false
+            }
+        }
+    },
+    "recall_time": {
+        "description": "撤回时间(秒)",
+        "hint": "几秒后撤回卡片，设为 0 则不撤回",
+        "type": "int",
+        "slider": {
+            "min": 0,
+            "max": 110,
+            "step": 1
+        },
+        "default": 10
+    },
+    "mystery_cookies": {
+        "description": "cookies",
+        "hint": "",
+        "type": "string",
+        "invisible": true,
+        "default": ""
+    }
+}
