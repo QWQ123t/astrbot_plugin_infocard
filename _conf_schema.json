@@ -1,0 +1,100 @@
+{
+    "protect_ids": {
+        "description": "信息保护用户",
+        "type": "list",
+        "hint": "开盒时，会忽略名单中的用户，注意：Bot和Bot管理员已默认被保护，除非Bot管理员亲自使用命令开盒自己，否则无法被开盒",
+        "default": []
+    },
+    "autobox": {
+        "description": "自动开盒配置",
+        "type": "object",
+        "hint": "",
+        "items": {
+            "enter": {
+                "description": "自动开盒新进群的人",
+                "type": "bool",
+                "default": false
+            },
+            "exit": {
+                "description": "自动开盒主动退群的人",
+                "type": "bool",
+                "default": false
+            }
+        }
+    },
+    "group_review": {
+        "description": "进群审核",
+        "type": "object",
+        "hint": "开启后，有人申请进群时 Bot 会自动艾特全体管理员并给出编号，管理员回复 同意/拒绝/拉黑 + 编号 即可处理",
+        "items": {
+            "enable": {
+                "description": "开启进群审核",
+                "type": "bool",
+                "default": false
+            },
+            "blacklist": {
+                "description": "进群黑名单",
+                "type": "list",
+                "hint": "名单中的用户申请进群将被自动拒绝；使用 拉黑 <编号> 指令可将申请人加入此名单",
+                "default": []
+            }
+        }
+    },
+    "antiflood": {
+        "description": "刷屏防护（表情包 + 长文字）",
+        "type": "object",
+        "hint": "表情包刷屏：窗口时间内连续发送达上限自动禁言；文字刷屏：单条消息超字数上限判定刷屏自动禁言（管理员与保护名单豁免）",
+        "items": {
+            "enable": {
+                "description": "开启刷屏防护",
+                "type": "bool",
+                "default": false
+            },
+            "max_count": {
+                "description": "表情包触发上限（个数）",
+                "type": "int",
+                "default": 5
+            },
+            "window_seconds": {
+                "description": "表情包统计窗口（秒）",
+                "type": "int",
+                "default": 60
+            },
+            "ban_seconds": {
+                "description": "表情包刷屏禁言时长（秒）",
+                "type": "int",
+                "default": 600
+            },
+            "max_chars": {
+                "description": "文字刷屏上限（字数）",
+                "type": "int",
+                "hint": "单条消息超过此字数判定刷屏并自动禁言",
+                "default": 300
+            },
+            "text_ban_seconds": {
+                "description": "文字刷屏禁言时长（秒）",
+                "type": "int",
+                "hint": "文字刷屏触发的自动禁言时长，默认 600 秒（10 分钟）",
+                "default": 600
+            }
+        }
+    },
+    "recall_time": {
+        "description": "撤回时间(秒)",
+        "hint": "几秒后撤回卡片，设为 0 则不撤回",
+        "type": "int",
+        "slider": {
+            "min": 0,
+            "max": 110,
+            "step": 1
+        },
+        "default": 10
+    },
+    "mystery_cookies": {
+        "description": "cookies",
+        "hint": "",
+        "type": "string",
+        "invisible": true,
+        "default": ""
+    }
+}
